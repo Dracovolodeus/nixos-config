@@ -12,13 +12,12 @@
     telegram-desktop
     cassette
     gimp3-with-plugins
-    krita
-    zoom-us
+    neohtop
     nwg-look
     obsidian
+    blueman
     imv
     mpv
-    blueman
 
     # Coding stuff
     openssl
@@ -37,12 +36,10 @@
     glib
 
     # CLI utils
-    pandoc
     wf-recorder
     bat
     git
     tree
-    neohtop
     fastfetch
     zip
     unzip
@@ -51,7 +48,7 @@
     inxi
     bluez
     bluez-tools
-    qemu
+    brightnessctl
 
     # WM and stuff
     hyprland
@@ -59,6 +56,7 @@
     hyprlock
     hypridle
     waybar
+    eww
     swww
     dunst
     rofi

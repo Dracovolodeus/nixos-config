@@ -2,7 +2,7 @@
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      monitor = ",preferred,auto,auto";
+      monitor = ",preferred,auto,1";
 
       "$terminal" = var.terminal;
       "$fileManager" = var.fileManager;

@@ -2,16 +2,17 @@
   imports = [
     ./boot.nix
     ./i18n.nix
-    ./user.nix
-    ./hyprland.nix
     ./nix.nix
-    ./nixld.nix
-    ./net.nix
     ./timezone.nix
+    ./net.nix
+    ./user.nix
     ./swap.nix
+    ./nixld.nix
+    ./hyprland.nix
     ./docker.nix
     ./bluetooth.nix
-    ./virtualbox.nix
+    ./nvidia.nix
     ./steam.nix
+    ./asus.nix
   ];
 }
