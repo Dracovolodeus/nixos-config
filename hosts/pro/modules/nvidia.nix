@@ -9,4 +9,5 @@
 
   powerManagement.enable = true;
   hardware.nvidia.powerManagement.enable = true;
+  hardware.nvidia.powerManagement.finegrained = false;
 }
