@@ -1,3 +1,6 @@
 hosts/pro/secret/*
 !hosts/pro/secret/default.nix
 !hosts/pro/secret/main.nix.example
+users/meowta/home-manager/secret/*
+!users/meowta/home-manager/secret/default.nix
+!users/meowta/home-manager/secret/main.nix.example

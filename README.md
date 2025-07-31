@@ -2,9 +2,9 @@
 
 <p align="center">
   </br>
-  <img src="https://img.shields.io/github/languages/count/Meowta5/nixos-config?style=for-the-badge&labelColor=313244&color=b4befe">
-  <img src="https://img.shields.io/github/repo-size/Meowta5/nixos-config?style=for-the-badge&labelColor=313244&color=b4befe">
-  <img src="https://img.shields.io/github/last-commit/Meowta5/nixos-config?style=for-the-badge&labelColor=313244&color=b4befe">
+  <img src="https://img.shields.io/github/languages/count/Dracovolodeus/nixos-config?style=for-the-badge&labelColor=313244&color=b4befe">
+  <img src="https://img.shields.io/github/repo-size/Dracovolodeus/nixos-config?style=for-the-badge&labelColor=313244&color=b4befe">
+  <img src="https://img.shields.io/github/last-commit/Dracovolodeus/nixos-config?style=for-the-badge&labelColor=313244&color=b4befe">
   </br>
 </p>
 
@@ -52,7 +52,7 @@ The other hotkeys are In `/nixos-config/users/$USER/home-manager/modules/hyprlan
 2. **Clone the Repository:**
 ```bash
 cd /
-git clone https://github.com/Meowta5/nixos-config.git
+git clone https://github.com/Dracovolodeus/nixos-config.git
 cd /nixos-config
 ```
 3. **Copy your hardware-configuration.nix file there:**
@@ -72,7 +72,7 @@ nano configuration.nix
 6. **Copy one of the users configuration to set up your own:**
 ```bash
 cd /nixos-config/users
-cp -r meowta $USER
+cp -r draco $USER
 cd $USER
 ```
 7. **Edit home-manager, wallpapers, and bin if necessary:**
@@ -114,7 +114,7 @@ cd $USER
 --    homeStateVersion = "25.05";
 ++    homeStateVersion = "your_home_manager_state_version";
       users = [
---        "meowta"
+--        "draco"
 ++        "<your_username_one>"
       ];
       hosts = [
