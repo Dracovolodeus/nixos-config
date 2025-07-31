@@ -18,17 +18,17 @@
         "meowta"
       ];
       hosts = [
-        { hostname = "pro"; stateVersion = "25.05"; }
+        { hostName = "pro"; stateVersion = "25.05"; }
       ];
     in
     {
       nixosConfigurations = builtins.listToAttrs (map
         (host: {
-          name = host.hostname;
+          name = host.hostName;
           value = nixpkgs.lib.nixosSystem {
             inherit system;
-            modules = [ ./hosts/${host.hostname}/configuration.nix ];
-            specialArgs = { inherit inputs; stateVersion = host.stateVersion; };
+            modules = [ ./hosts/${host.hostName}/configuration.nix ];
+            specialArgs = { inherit inputs; stateVersion = host.stateVersion; hostName = host.hostName; };
           };
         })
         hosts);

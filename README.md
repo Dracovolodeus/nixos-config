@@ -111,14 +111,14 @@ cd $USER
     outputs = { nixpkgs, home-manager, ... } @ inputs:
     let
       system = "x86_64-linux";
---    homeStateVersion = "24.11";
+--    homeStateVersion = "25.05";
 ++    homeStateVersion = "your_home_manager_state_version";
       users = [
 --        "meowta"
 ++        "<your_username_one>"
       ];
       hosts = [
---        { hostname = "pro"; stateVersion  = "24.11"; }
+--        { hostname = "pro"; stateVersion  = "25.05"; }
 ++        { hostname = "<your_host_name>"; stateVersion = "your_state_version"; }
       ];
     in {

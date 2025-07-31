@@ -1,10 +1,10 @@
-{ config, pkgs, stateVersion, ... }: {
+{ config, pkgs, stateVersion, hostName, ... }: {
   imports = [
-    ../hardware-configuration.nix
+    ./hardware-configuration.nix
     ./modules
   ];
 
-  networking.hostName = "pro";
+  networking.hostName = hostName;
   system.stateVersion = stateVersion;
 
   # Allow unfree packages
