@@ -62,7 +62,7 @@ cp /etc/nixos/hardware-configuration.nix ./hosts
 4. **Copy one of the hosts configuration to set up your own:**
 ```bash
 cd hosts
-cp -r pro <your_hostname>
+cp -r tuf <your_hostname>
 cd <your_hostname>
 ```
 5. **Edit configuration.nix if necessary:**
@@ -119,6 +119,7 @@ cd $USER
       ];
       hosts = [
 --        { hostname = "pro"; stateVersion  = "25.05"; }
+--        { hostname = "tuf"; stateVersion  = "25.05"; }
 ++        { hostname = "<your_host_name>"; stateVersion = "your_state_version"; }
       ];
     in {

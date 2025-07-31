@@ -15,10 +15,11 @@
       system = "x86_64-linux";
       homeStateVersion = "25.05";
       users = [
-        "meowta"
+        "draco"
       ];
       hosts = [
         { hostName = "pro"; stateVersion = "25.05"; }
+        { hostName = "tuf"; stateVersion = "25.05"; }
       ];
     in
     {
