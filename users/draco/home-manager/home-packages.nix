@@ -49,15 +49,8 @@
     inxi
     bluez
     bluez-tools
+    playerctl
     brightnessctl
-    # qemu
-
-    qemu_kvm
-    virt-manager
-    virt-viewer
-    spice-vdagent
-    OVMF
-    swtpm
 
     jq
     socat
@@ -83,3 +76,4 @@
   ];
   fonts.fontconfig.enable = true;
 }
+
