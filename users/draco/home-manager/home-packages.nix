@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, unstable, ... }: {
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
@@ -60,8 +60,7 @@
     hyprshot
     hyprlock
     hypridle
-    waybar
-    eww
+    unstable.waybar
     swww
     dunst
     rofi

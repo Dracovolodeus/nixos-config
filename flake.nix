@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
@@ -40,7 +41,10 @@
           value = home-manager.lib.homeManagerConfiguration {
             pkgs = nixpkgs.legacyPackages.${system};
             modules = [ ./users/${user}/home-manager/home.nix ];
-            extraSpecialArgs = { inherit inputs user homeStateVersion; };
+            extraSpecialArgs = {
+              inherit inputs user homeStateVersion;
+              unstable = inputs.nixpkgs-unstable.legacyPackages.${system};
+            };
           };
         })
         users);
