@@ -1,8 +1,7 @@
-{ unstable, ... }: {
+{
   programs.waybar = {
     enable = true;
     style = ./style.css;
-    package = unstable.waybar;
     settings = {
       "mainBar" = {
         layer = "top";

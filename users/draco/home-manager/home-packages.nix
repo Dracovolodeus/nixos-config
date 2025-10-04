@@ -1,4 +1,4 @@
-{ pkgs, unstable, ... }: {
+{ pkgs, ... }: {
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
@@ -38,6 +38,7 @@
 
     # CLI utils
     wf-recorder
+    wl-clipboard
     bat
     git
     tree
@@ -56,11 +57,11 @@
     socat
 
     # WM and stuff
-    hyprland
+    # hyprland
     hyprshot
     hyprlock
     hypridle
-    unstable.waybar
+    waybar
     swww
     dunst
     rofi

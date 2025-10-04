@@ -1,7 +1,6 @@
-{ lib, user, homeStateVersion, ... }:
+{ user, homeStateVersion, ... }:
 let
   var = import ./var.nix { inherit user; };
-  hmSecretFile = "/etc/nix-secrets/hm-secrets.nix";
 in
 {
   home = {
@@ -13,7 +12,7 @@ in
   imports = [
     ./home-packages.nix
     ./modules
-  ] ++ lib.optional (builtins.pathExists hmSecretFile) hmSecretFile;
+  ];
 
   _module.args = {
     inherit var;

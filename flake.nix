@@ -29,7 +29,10 @@
           name = host.hostName;
           value = nixpkgs.lib.nixosSystem {
             inherit system;
-            modules = [ ./hosts/${host.hostName}/configuration.nix ];
+            modules = [
+              ./hosts/${host.hostName}/configuration.nix
+              ./modules/hosts
+            ];
             specialArgs = { inherit inputs; stateVersion = host.stateVersion; hostName = host.hostName; };
           };
         })
