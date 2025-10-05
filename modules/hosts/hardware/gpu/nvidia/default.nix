@@ -16,7 +16,6 @@ in {
 
   config = mkIf cfg.enable {
     services.xserver.videoDrivers = [ "nvidia" ];
-    boot.initrd.kernelModules = [ "nvidia_drm" ];
     hardware.nvidia = {
       open = true;
       package = config.boot.kernelPackages.nvidiaPackages.${cfg.package};
