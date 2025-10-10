@@ -73,6 +73,8 @@
     alsa-utils
 
     nerd-fonts.jetbrains-mono
+
+xdg-utils
   ];
   fonts.fontconfig.enable = true;
 }

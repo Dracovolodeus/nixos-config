@@ -9,6 +9,8 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  programs.dconf.enable = true;
+
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     wl-clipboard
