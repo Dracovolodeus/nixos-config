@@ -2,6 +2,8 @@
   module.system.boot = {
     enable = true;
     kernelPackages = "linuxPackages_6_12";
-    kernelParams = [];
+    kernelParams = [
+      "pcie_aspm=off"
+    ];
   };
 }

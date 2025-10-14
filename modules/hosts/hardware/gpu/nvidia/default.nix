@@ -22,10 +22,10 @@ in {
       modesetting.enable = false;
 
       powerManagement = {
-        enable = false;
+        enable = true;
         finegrained = false;
       };
     };
-    powerManagement.enable = false;
+    powerManagement.enable = true;
   };
 }
