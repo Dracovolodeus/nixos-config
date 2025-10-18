@@ -23,6 +23,7 @@
     # Coding stuff
     openssl
     nix-prefetch-github
+    nix-index
 
     python313Full
     nodejs_24
