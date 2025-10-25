@@ -14,6 +14,8 @@
     cassette
     gimp3-with-plugins
     neohtop
+    figma-linux
+    nekoray
     nwg-look
     obsidian
     blueman
