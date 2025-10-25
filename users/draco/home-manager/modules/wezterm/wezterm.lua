@@ -1,12 +1,11 @@
-
-local wezterm = require 'wezterm'
+local wezterm = require("wezterm")
 local config = {}
 
 config = {
   hide_tab_bar_if_only_one_tab = true,
-  color_scheme = 'Catppuccin Mocha',
+  color_scheme = "Catppuccin Mocha",
   font = wezterm.font({
-      family = "JetBrainsMono Nerd Font Mono",
+      family = "JetBrainsMono NFM",
       weight = "Medium",
     }),
 
@@ -14,18 +13,17 @@ config = {
   enable_wayland = true,
   check_for_updates = false,
 
-  default_prog = { "fish" },
-  window_close_confirmation = 'NeverPrompt',
+  window_close_confirmation = "NeverPrompt",
 
 
   cursor_blink_rate = 800,
   default_cursor_style = "BlinkingBar",
-  cursor_blink_ease_in = 'Constant',
-  cursor_blink_ease_out = 'Constant',
+  cursor_blink_ease_in = "Constant",
+  cursor_blink_ease_out = "Constant",
 
   window_frame = {
     font = wezterm.font({
-      family = "JetBrainsMono Nerd Font Mono",
+      family = "JetBrainsMono NFM",
       weight = "Bold",
     }),
     font_size = 10.0,
@@ -56,7 +54,7 @@ config = {
   },
 
   color_schemes = {
-    ['Catppuccin Mocha'] = {
+    ["Catppuccin Mocha"] = {
       foreground = "#cdd6f4",
       background = "#1e1e2e",
       cursor_bg = "#f5e0dc",
@@ -64,24 +62,24 @@ config = {
       selection_bg = "#f5e0dc",
       selection_fg = "#1e1e2e",
       ansi = {
-        "#45475a",  -- black (normal)
-        "#f38ba8",  -- red
-        "#cba6f7",  -- green
-        "#f9e2af",  -- yellow
-        "#89b4fa",  -- blue
-        "#f5c2e7",  -- magenta
-        "#94e2d5",  -- cyan
-        "#bac2de",  -- white
+        "#45475a",
+        "#f38ba8",
+        "#cba6f7",
+        "#f9e2af",
+        "#89b4fa",
+        "#f5c2e7",
+        "#94e2d5",
+        "#bac2de",
       },
       brights = {
-        "#585b70",  -- black (bright)
-        "#f38ba8",  -- red
-        "#cba6f7",  -- green
-        "#f9e2af",  -- yellow
-        "#89b4fa",  -- blue
-        "#f5c2e7",  -- magenta
-        "#94e2d5",  -- cyan
-        "#a6adc8",  -- white
+        "#585b70",
+        "#f38ba8",
+        "#cba6f7",
+        "#f9e2af",
+        "#89b4fa",
+        "#f5c2e7",
+        "#94e2d5",
+        "#a6adc8",
       },
       indexed = {
         [16] = "#fab387",
