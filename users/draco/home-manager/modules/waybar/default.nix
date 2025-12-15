@@ -130,7 +130,7 @@
         "battery" = {
           format-icons = [ "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
           format = " {icon} {capacity}% ";
-          full-at = 50;
+          full-at = 100;
           interval = 90;
           states = {
             warning = 25;

@@ -8,41 +8,39 @@
     wezterm
     xfce.thunar
     xfce.xfconf
-    libsForQt5.kdeconnect-kde
     onlyoffice-desktopeditors
     telegram-desktop
-    cassette
     gimp3-with-plugins
     neohtop
     figma-linux
-    nekoray
-    nwg-look
+    throne
     obsidian
     blueman
     imv
     mpv
+
+    jetbrains.idea-community-bin
+    jdk21
+    gradle_8
+    maven
 
     # Coding stuff
     openssl
     nix-prefetch-github
     nix-index
 
-    python313Full
+    python314
     nodejs_24
     uv
-
-    lua
 
     rustc
     cargo
 
     gcc
-    glib
 
     # CLI utils
     wf-recorder
     wl-clipboard
-    bat
     git
     tree
     fastfetch
@@ -76,8 +74,10 @@
     alsa-utils
 
     nerd-fonts.jetbrains-mono
+    noto-fonts-cjk-sans
+    noto-fonts-emoji-blob-bin
 
-xdg-utils
+    xdg-utils
   ];
   fonts.fontconfig.enable = true;
 }

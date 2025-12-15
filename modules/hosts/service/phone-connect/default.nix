@@ -10,7 +10,7 @@ in {
 
   config = mkIf cfg.enable {
 
-    services.udev.packages = [ pkgs.android-udev-rules ];
+    # services.udev.packages = [ pkgs.android-udev-rules ];
     services.gvfs.enable = true;
     programs.adb.enable = true;
 

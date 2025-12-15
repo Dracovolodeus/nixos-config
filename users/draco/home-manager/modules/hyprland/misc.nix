@@ -13,9 +13,5 @@
             force_default_wallpaper = -1;
             disable_hyprland_logo = false;
         };
-
-        gestures = {
-            workspace_swipe = false;
-        };
     };
 }
