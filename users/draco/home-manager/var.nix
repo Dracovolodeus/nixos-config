@@ -1,13 +1,13 @@
 { user, ... }: {
-
   # Basic
   inherit user;
+
+  # Programs
   terminal = "wezterm";
-  editor = "nvim";
-  shell = "fish";
   fileManager = "thunar";
   browser = "firefox";
-  cursorSize = 16;
+  editor = "nvim";
+  shell = "fish";
 
   # Rofi Based
   launcher = "bash -c \"pkill rofi || true; rofi -show drun -theme launcher.rasi\"";
@@ -15,11 +15,17 @@
   close_launcher = "pkill rofi";
   close_powermenu = "pkill rofi";
 
-  # HotKeys
-  hotkey = {
-    mainMod = "super";
-    controlMod = "ctrl";
-    altMod = "alt";
-  };
+  # Scripts
+  change_wallpaper = "bash /nixos-config/users/${user}/bin/change_wallpaper.sh";
 
+  # UI settings
+  cursorSize = 16;
+
+  # Keys
+  key = {
+    mainMod = "Super";
+    controlMod = "Ctrl";
+    altMod = "Alt";
+    shiftMod = "Shift";
+  };
 }
