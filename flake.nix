@@ -13,14 +13,11 @@
 
   outputs = { nixpkgs, home-manager, ... } @ inputs:
     let
-      system = "x86_64-linux";
-      homeStateVersion = "25.11";
       users = [
-        "draco"
+        {userName = "draco"; homeStateVersion = "25.11"; system = "x86_64-linux"; }
       ];
       hosts = [
-        { hostName = "pro"; stateVersion = "25.05"; }
-        { hostName = "tuf"; stateVersion = "25.11"; }
+        { hostName = "tuf"; stateVersion = "25.11"; system = "x86_64-linux"; }
       ];
     in
     {
@@ -28,10 +25,9 @@
         (host: {
           name = host.hostName;
           value = nixpkgs.lib.nixosSystem {
-            inherit system;
+            inherit host.system;
             modules = [
               ./hosts/${host.hostName}/configuration.nix
-              ./modules/hosts
             ];
             specialArgs = { inherit inputs; stateVersion = host.stateVersion; hostName = host.hostName; };
           };
@@ -40,13 +36,15 @@
 
       homeConfigurations = builtins.listToAttrs (map
         (user: {
-          name = user;
+          name = user.userName;
           value = home-manager.lib.homeManagerConfiguration {
-            pkgs = nixpkgs.legacyPackages.${system};
-            modules = [ ./users/${user}/home-manager/home.nix ];
+            pkgs = nixpkgs.legacyPackages.${user.system};
+            modules = [ ./users/${user.userName}/home-manager/home.nix ];
             extraSpecialArgs = {
-              inherit inputs user homeStateVersion;
-              unstable = inputs.nixpkgs-unstable.legacyPackages.${system};
+              inherit inputs;
+              homeStateVersion = user.homeStateVersion;
+              user = user.userName;
+              unstable = inputs.nixpkgs-unstable.legacyPackages.${user.system};
             };
           };
         })

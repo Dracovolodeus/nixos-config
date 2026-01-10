@@ -118,7 +118,6 @@ cd $USER
 ++        "<your_username_one>"
       ];
       hosts = [
---        { hostname = "pro"; stateVersion  = "25.05"; }
 --        { hostname = "tuf"; stateVersion  = "25.05"; }
 ++        { hostname = "<your_host_name>"; stateVersion = "your_state_version"; }
       ];
