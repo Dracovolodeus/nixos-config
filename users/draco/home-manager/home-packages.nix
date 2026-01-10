@@ -37,6 +37,7 @@
     cargo
 
     gcc
+    glib
 
     # CLI utils
     wf-recorder
@@ -58,7 +59,7 @@
     socat
 
     # WM and stuff
-    # hyprland
+    hyprland
     hyprshot
     hyprlock
     hypridle
@@ -68,10 +69,8 @@
     rofi
 
     # Sound
-    pulseaudio
+    pipewire
     pavucontrol
-    pamixer
-    alsa-utils
 
     nerd-fonts.jetbrains-mono
     noto-fonts-cjk-sans

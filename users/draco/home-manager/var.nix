@@ -11,7 +11,9 @@
 
   # Rofi Based
   launcher = "bash -c \"pkill rofi || true; rofi -show drun -theme launcher.rasi\"";
-  powermenu = "bash -c \"pkill rofi || true; bash $HOME/.config/rofi/powermenu/powermenu.sh\"";
+  powermenu = "bash -c \"pkill rofi || true; bash /home/${user}/.config/rofi/powermenu/powermenu.sh\"";
+  close_launcher = "pkill rofi";
+  close_powermenu = "pkill rofi";
 
   # HotKeys
   hotkey = {

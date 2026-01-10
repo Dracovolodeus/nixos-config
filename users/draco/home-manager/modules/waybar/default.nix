@@ -1,4 +1,4 @@
-{
+{ var, ... }: {
   programs.waybar = {
     enable = true;
     style = ./style.css;
@@ -62,7 +62,6 @@
           min-length = 5;
           tooltip = false;
         };
-
         "pulseaudio" = {
           format = " {icon} {volume}% ";
           format-muted = "  muted ";
@@ -70,20 +69,18 @@
             headphone = "";
             default = [ " " " " " " ];
           };
-          on-click = "bash /nixos-config/users/\${USER}/bin/toggle_mute.sh";
+          on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
           on-click-right = "pavucontrol";
         };
-
         "pulseaudio#microphone" = {
           format = "{format_source}";
           format-source = " {volume}% ";
           format-source-muted = " muted ";
-          on-click = "pamixer --default-source -t";
+          on-click = "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
           on-click-right = "pavucontrol";
-          on-scroll-up = "pamixer --default-source -i 1";
-          on-scroll-down = "pamixer --default-source -d 1";
+          on-scroll-up = "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 0.01+ -l 1.0";
+          on-scroll-down = "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 0.01-";
         };
-
         "cava" = {
           hide_on_silence = false;
           framerate = 60;
@@ -93,7 +90,6 @@
           sleep_timer = 5;
           bar_delimiter = 0;
         };
-
         "clock" = {
           tooltip-format = "<tt><small>{calendar}</small></tt>";
           format = "{:%H:%M:%S}";
@@ -140,14 +136,14 @@
         "custom/launcher" = {
           format = " 󱄅 ";
           tooltip-format = "Launching a rofi-based launcher";
-          on-click = "pkill rofi || true; rofi -show drun -theme launcher.rasi -location 1 -yoffset 35";
-          on-click-right = "pkill rofi";
+          on-click = var.launcher;
+          on-click-right = var.close_launcher;
         };
         "custom/powermenu" = {
           format = " 󰐥 ";
           tooltip-format = "Launching powermenu based on rofi";
-          on-click = "pkill rofi || true; bash $HOME/.config/rofi/powermenu/powermenu.sh";
-          on-click-right = "pkill rofi";
+          on-click = var.powermenu;
+          on-click-right = var.close_powermenu;
         };
       };
     };
