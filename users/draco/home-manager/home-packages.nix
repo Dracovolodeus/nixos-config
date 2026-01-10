@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }: {
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
@@ -9,6 +9,7 @@
     xfce.thunar
     xfce.xfconf
     onlyoffice-desktopeditors
+    inputs.freesmlauncher.packages.${pkgs.system}.freesmlauncher
     telegram-desktop
     gimp3-with-plugins
     neohtop
@@ -18,11 +19,6 @@
     blueman
     imv
     mpv
-
-    jetbrains.idea-community-bin
-    jdk21
-    gradle_8
-    maven
 
     # Coding stuff
     openssl
@@ -35,6 +31,11 @@
 
     rustc
     cargo
+
+    jetbrains.idea-community-bin
+    jdk21
+    gradle_8
+    maven
 
     gcc
     glib
