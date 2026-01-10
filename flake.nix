@@ -1,5 +1,5 @@
 {
-  description = "My Flake";
+  description = "Dracovolodeus flake setup";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
@@ -20,14 +20,15 @@
         { hostName = "tuf"; stateVersion = "25.11"; system = "x86_64-linux"; }
       ];
     in
-    {
+      {
       nixosConfigurations = builtins.listToAttrs (map
         (host: {
           name = host.hostName;
           value = nixpkgs.lib.nixosSystem {
-            inherit host.system;
+            system = host.system;
             modules = [
               ./hosts/${host.hostName}/configuration.nix
+              ./modules/hosts
             ];
             specialArgs = { inherit inputs; stateVersion = host.stateVersion; hostName = host.hostName; };
           };

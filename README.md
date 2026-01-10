@@ -110,16 +110,13 @@ cd $USER
 ```diff
     outputs = { nixpkgs, home-manager, ... } @ inputs:
     let
-      system = "x86_64-linux";
---    homeStateVersion = "25.05";
-++    homeStateVersion = "your_home_manager_state_version";
       users = [
---        "draco"
-++        "<your_username_one>"
+--        {userName = "draco"; homeStateVersion = "25.11"; system = "x86_64-linux"; }
+++        {userName = "your_username"; homeStateVersion = "your_home_manager_state_version"; system = "your_system"; }
       ];
       hosts = [
---        { hostname = "tuf"; stateVersion  = "25.05"; }
-++        { hostname = "<your_host_name>"; stateVersion = "your_state_version"; }
+--        { hostName = "tuf"; stateVersion = "25.11"; system = "x86_64-linux"; }
+++        { hostname = "<your_host_name>"; stateVersion = "your_state_version"; system = "your_system"; }
       ];
     in {
 ```
