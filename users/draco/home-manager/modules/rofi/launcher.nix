@@ -4,7 +4,7 @@
     lines: 5;
     font: "JetBrainsMono Nerd Font 14";
     show-icons: true;
-    terminal: "${var.terminal}";
+    terminal: "${var.program.terminal.name}";
     drun-display-format: "{icon} {name}";
     location: 0;
     disable-history: false;

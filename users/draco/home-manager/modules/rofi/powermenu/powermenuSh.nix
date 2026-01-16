@@ -33,7 +33,7 @@ confirm_action() { # Confirm
 
 lock_screen() { # Lock
     if [[ $(confirm_action "logout") == "$yes" ]]; then
-        hyprlock
+        loginctl lock-session
     fi
 }
 

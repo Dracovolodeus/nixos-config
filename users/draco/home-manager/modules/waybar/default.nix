@@ -9,11 +9,11 @@
         height = 35;
         modules-left = [
           "custom/launcher"
-          "hyprland/workspaces"
+          "niri/workspaces"
           "custom/powermenu"
         ];
         modules-center = [
-          "hyprland/language"
+          "niri/language"
           "clock"
           "pulseaudio"
           "pulseaudio#microphone"
@@ -25,7 +25,7 @@
           "disk"
           "memory"
         ];
-        "hyprland/workspaces" = {
+        "niri/workspaces" = {
           active-only = false;
           disable-scroll = true;
           format = "{icon}";
@@ -56,7 +56,7 @@
             "10" = [ ];
           };
         };
-        "hyprland/language" = {
+        "niri/language" = {
           format = "{shortDescription}";
           on-click = "";
           min-length = 5;
@@ -136,14 +136,14 @@
         "custom/launcher" = {
           format = " 󱄅 ";
           tooltip-format = "Launching a rofi-based launcher";
-          on-click = var.launcher;
-          on-click-right = var.close_launcher;
+          on-click = "${var.program.launcher.open}";
+          on-click-right = "${var.program.launcher.close}";
         };
         "custom/powermenu" = {
           format = " 󰐥 ";
           tooltip-format = "Launching powermenu based on rofi";
-          on-click = var.powermenu;
-          on-click-right = var.close_powermenu;
+          on-click = "${var.program.powermenu.open}";
+          on-click-right = "${var.program.powermenu.close}";
         };
       };
     };

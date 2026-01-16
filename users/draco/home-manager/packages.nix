@@ -9,11 +9,11 @@
     xfce.thunar
     xfce.xfconf
     onlyoffice-desktopeditors
+    obs-studio
     inputs.freesmlauncher.packages.${pkgs.system}.freesmlauncher
     telegram-desktop
     gimp3-with-plugins
     neohtop
-    figma-linux
     throne
     obsidian
     blueman
@@ -32,7 +32,7 @@
     rustc
     cargo
 
-    jetbrains.idea-community-bin
+    jetbrains.idea-oss
     jdk21
     gradle_8
     maven
@@ -60,11 +60,6 @@
     socat
 
     # WM and stuff
-    hyprland
-    hyprshot
-    hyprlock
-    hypridle
-    waybar
     swww
     dunst
     rofi
@@ -77,8 +72,12 @@
     noto-fonts-cjk-sans
     noto-fonts-emoji-blob-bin
 
+    niri
+    xwayland-satellite
     xdg-utils
+    xdg-desktop-portal-gnome
+    xdg-desktop-portal-gtk
   ];
+
   fonts.fontconfig.enable = true;
 }
-

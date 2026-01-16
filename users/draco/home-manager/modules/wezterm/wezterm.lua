@@ -10,7 +10,7 @@ config = {
     }),
 
   scrollback_lines = 5000,
-  enable_wayland = true,
+  enable_wayland = false,
   check_for_updates = false,
 
   window_close_confirmation = "NeverPrompt",

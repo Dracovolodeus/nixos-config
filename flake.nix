@@ -14,6 +14,8 @@
       url = "github:FreesmTeam/FreesmLauncher";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    niri-flake.url = "github:sodiboo/niri-flake/very-refactor";
   };
 
   outputs = { nixpkgs, home-manager, ... } @ inputs:
@@ -45,7 +47,10 @@
           name = user.userName;
           value = home-manager.lib.homeManagerConfiguration {
             pkgs = nixpkgs.legacyPackages.${user.system};
-            modules = [ ./users/${user.userName}/home-manager/home.nix ];
+            modules = [
+              ./users/${user.userName}/home-manager/home.nix
+              inputs.niri-flake.homeModules.niri
+            ];
             extraSpecialArgs = {
               inherit inputs;
               homeStateVersion = user.homeStateVersion;

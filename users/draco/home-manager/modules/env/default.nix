@@ -1,8 +1,8 @@
 { var, ... }: {
   home.sessionVariables = {
-    EDITOR = var.editor;
-    TERMINAL = var.terminal;
-    XCURSOR_SIZE = var.cursorSize;
-    SHELL = var.shell;
+    EDITOR = var.program.editor.name;
+    TERMINAL = var.program.terminal.name;
+    SHELL = var.program.shell.name;
+    XCURSOR_SIZE = var.ui.cursor.size;
   };
 }

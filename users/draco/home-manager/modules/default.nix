@@ -1,15 +1,15 @@
 {
   imports = [
-    ./wezterm
-    ./hyprland
-    ./hyprlock
-    ./hypridle
-    ./waybar
-    ./fish
-    ./gtk
-		#   ./nvim
+    ./niri
     ./rofi
+    ./waybar
+    ./gtk
+    ./xdg
+    ./swayidle
+    ./swaylock
+    ./wezterm
     ./fastfetch
+    ./fish
     ./env
   ];
 }

@@ -15,7 +15,7 @@
 </br>
 
  * OS: [**`NixOS`**](https://nixos.org/)
- * WM: [**`Hyprland`**](https://hyprland.org/)
+ * WM: [**`Niri`**](https://github.com/YaLTeR/niri)
  * Bar: [**`Waybar`**](https://github.com/Alexays/Waybar)
  * Terminal: [**`WezTerm`**](https://wezterm.org/)
  * Shell: [**`Fish`**](https://github.com/fish-shell/fish-shell)
@@ -45,7 +45,7 @@
 * **Move the window to another desktop** - `super + shift + 1/0`
 * **Switch the window to floating mode** - `super + e`
 
-The other hotkeys are In `/nixos-config/users/$USER/home-manager/modules/hyprland/binds.nix`.
+The other hotkeys are In `/nixos-config/users/$USER/home-manager/modules/niri/default.nix`.
 
 ## 💻 Installation
 1. **Install NixOS**: If you haven't already installed NixOS, follow the [NixOS Installation Guide](https://nixos.org/manual/nixos/stable/#sec-installation) for detailed instructions.
@@ -75,20 +75,20 @@ cd /nixos-config/users
 cp -r draco $USER
 cd $USER
 ```
-7. **Edit home-manager, wallpapers, and bin if necessary:**
+7. **Edit home-manager, assets/wallpapers, and scripts if necessary:**
 * ```bash
   # For home-manager
   cd home-manager
 
   # Edit home-packages
-  nano home-packages.nix
+  nano packages.nix
 
   # Edit modules
   nano modules/<module><file>
   ```
 * ```bash
   # For wallpapers
-  cd wallpapers
+  cd assets/wallpapers
   
   # Add wallpaper
   cp <path_to_wallpaper> ./
@@ -97,8 +97,8 @@ cd $USER
   rm <wallpaper>
   ```
 * ```bash
-  # For bin
-  cd bin
+  # For scripts
+  cd scripts
 
   # Add bin
   cp <path_to_bin> ./
