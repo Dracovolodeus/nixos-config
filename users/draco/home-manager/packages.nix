@@ -9,10 +9,11 @@
     xfce.thunar
     xfce.xfconf
     onlyoffice-desktopeditors
-    obs-studio
     inputs.freesmlauncher.packages.${pkgs.system}.freesmlauncher
     telegram-desktop
     gimp3-with-plugins
+    keepassxc
+    obs-studio
     neohtop
     throne
     obsidian
