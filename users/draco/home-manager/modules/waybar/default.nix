@@ -58,7 +58,7 @@
         };
         "niri/language" = {
           format = "{shortDescription}";
-          on-click = "";
+          on-click = "niri msg action switch-layout next";
           min-length = 5;
           tooltip = false;
         };
