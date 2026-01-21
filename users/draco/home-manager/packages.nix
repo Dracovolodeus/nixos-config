@@ -12,6 +12,7 @@
     inputs.freesmlauncher.packages.${pkgs.system}.freesmlauncher
     telegram-desktop
     gimp3-with-plugins
+    qemu
     keepassxc
     obs-studio
     neohtop

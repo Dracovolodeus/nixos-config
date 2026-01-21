@@ -214,7 +214,7 @@ in {
     xcursor-theme "Bibata-Modern-Ice"
     xcursor-size 16
     hide-when-typing
-    hide-after-inactive-ms 1000
+    hide-after-inactive-ms 5000
   }
 
   environment {
