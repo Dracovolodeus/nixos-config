@@ -11,11 +11,9 @@
     };
 
     freesmlauncher = {
-      url = "github:FreesmTeam/FreesmLauncher";
+      url = "github:FreesmTeam/FreesmLauncher/update_flake_lock_action";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    niri-flake.url = "github:sodiboo/niri-flake/very-refactor";
   };
 
   outputs = { nixpkgs, home-manager, ... } @ inputs:
@@ -49,7 +47,6 @@
             pkgs = nixpkgs.legacyPackages.${user.system};
             modules = [
               ./users/${user.userName}/home-manager/home.nix
-              inputs.niri-flake.homeModules.niri
             ];
             extraSpecialArgs = {
               inherit inputs;

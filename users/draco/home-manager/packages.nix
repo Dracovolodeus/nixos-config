@@ -10,6 +10,7 @@
     xfce.xfconf
     onlyoffice-desktopeditors
     inputs.freesmlauncher.packages.${pkgs.system}.freesmlauncher
+    # inputs.freesmlauncher
     telegram-desktop
     gimp3-with-plugins
     qemu
@@ -35,6 +36,7 @@
     cargo
 
     jetbrains.idea-oss
+    jetbrains.pycharm-oss
     jdk21
     gradle_8
     maven

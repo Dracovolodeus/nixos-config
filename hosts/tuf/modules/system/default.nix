@@ -6,5 +6,6 @@
     ./network
     ./nix
     ./timezone
+    ./security
   ];
 }
