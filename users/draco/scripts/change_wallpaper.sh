@@ -29,4 +29,4 @@ fi
 selected_file="${available_files[RANDOM % ${#available_files[@]}]}"
 echo "$selected_file" >> "$HISTORY_FILE"
 ln -fs $selected_file $LOCKSCREEN
-swww img $selected_file
+awww img $selected_file

@@ -2,16 +2,26 @@
   description = "Dracovolodeus flake setup";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.11";
+      url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     freesmlauncher = {
       url = "github:FreesmTeam/FreesmLauncher/update_flake_lock_action";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    mangowc = {
+      url = "github:DreamMaoMao/mango";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -20,6 +30,7 @@
     let
       users = [
         {userName = "draco"; homeStateVersion = "25.11"; system = "x86_64-linux"; }
+        {userName = "luxle"; homeStateVersion = "25.11"; system = "x86_64-linux"; }
       ];
       hosts = [
         { hostName = "tuf"; stateVersion = "25.11"; system = "x86_64-linux"; }
@@ -47,6 +58,7 @@
             pkgs = nixpkgs.legacyPackages.${user.system};
             modules = [
               ./users/${user.userName}/home-manager/home.nix
+              inputs.mangowc.hmModules.mango
             ];
             extraSpecialArgs = {
               inherit inputs;

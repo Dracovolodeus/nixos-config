@@ -10,6 +10,13 @@
       shell = pkgs.fish;
       packages = with pkgs; [ ];
     };
+    users.luxle = {
+      isNormalUser = true;
+      description = "LuxLePorte";
+      extraGroups = [ "wheel" "docker" ];
+      shell = pkgs.fish;
+      packages = with pkgs; [ ];
+    };
   };
-  nix.settings.trusted-users = [ "root" "draco" ];
+  nix.settings.trusted-users = [ "root" "draco" "luxle" ];
 }

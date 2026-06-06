@@ -1,32 +1,37 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, unstable, inputs, ... }: {
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
 
     # Desktop apps
+    # inputs.freesmlauncher.packages.${pkgs.system}.freesmlauncher
     firefox
     wezterm
-    xfce.thunar
-    xfce.xfconf
+    ghostty
+    anki
+    thunar
+    xfconf
     onlyoffice-desktopeditors
-    inputs.freesmlauncher.packages.${pkgs.system}.freesmlauncher
-    # inputs.freesmlauncher
     telegram-desktop
     gimp3-with-plugins
     qemu
     keepassxc
     obs-studio
     neohtop
-    throne
+    # throne
     obsidian
     blueman
+    furmark
     imv
     mpv
+
 
     # Coding stuff
     openssl
     nix-prefetch-github
     nix-index
+
+    go
 
     python314
     nodejs_24
@@ -35,8 +40,6 @@
     rustc
     cargo
 
-    jetbrains.idea-oss
-    jetbrains.pycharm-oss
     jdk21
     gradle_8
     maven
@@ -64,8 +67,7 @@
     socat
 
     # WM and stuff
-    swww
-    dunst
+    awww
     rofi
 
     # Sound
@@ -79,6 +81,7 @@
     niri
     xwayland-satellite
     xdg-utils
+    quickshell
     xdg-desktop-portal-gnome
     xdg-desktop-portal-gtk
   ];

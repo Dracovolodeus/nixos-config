@@ -11,5 +11,8 @@
     ./fastfetch
     ./fish
     ./env
+    ./heroic
+    ./noctalia-shell
+    ./vesktop
   ];
 }

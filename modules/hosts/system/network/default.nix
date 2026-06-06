@@ -21,6 +21,11 @@ in {
       default = [ ];
       type = listOf int;
     };
+    allowedUDPPorts = mkOption {
+      description = "Allowed TCP ports";
+      default = [ ];
+      type = listOf int;
+    };
   };
 
   config = mkIf cfg.enable {
@@ -30,6 +35,7 @@ in {
       firewall = {
         enable = cfg.enableFirewall;
         allowedTCPPorts = cfg.allowedTCPPorts;
+        allowedUDPPorts = cfg.allowedUDPPorts;
         allowPing = cfg.allowPing;
       };
     };

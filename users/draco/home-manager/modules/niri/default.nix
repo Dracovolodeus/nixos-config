@@ -9,7 +9,8 @@ in {
   prefer-no-csd
 
   spawn-at-startup "${var.program.statusLine.open}"
-  spawn-sh-at-startup "swww-daemon"
+  spawn-at-startup "noctalia-shell"
+  spawn-sh-at-startup "awww-daemon"
 
   screenshot-path "${var.path.screenshot}"
 
@@ -25,8 +26,8 @@ in {
 
   input {
     keyboard {
-      repeat-rate 40
-      repeat-delay 300
+      repeat-rate 45
+      repeat-delay 275
       xkb {
         layout "us,ru"
         options "grp:alt_shift_toggle"
@@ -119,8 +120,8 @@ in {
 
     // Run applications
     ${mainMod}+return repeat=false hotkey-overlay-title="Open a Terminal: ${var.program.terminal.name}" { spawn "${var.program.terminal.open}"; }
-    ${mainMod}+R repeat=false hotkey-overlay-title="Run an Application Launcher" { spawn-sh "${var.program.launcher.open}"; }
-    ${mainMod}+P repeat=false hotkey-overlay-title="Run an Powermenu" {spawn-sh "${var.program.powermenu.open}"; }
+    ${mainMod}+R repeat=false hotkey-overlay-title="Run an Application Launcher" { spawn-sh "noctalia-shell ipc call launcher toggle"; }
+    ${mainMod}+P repeat=false hotkey-overlay-title="Run an Powermenu" {spawn-sh "noctalia-shell ipc call sessionMenu toggle"; }
     ${mainMod}+${shiftMod}+T repeat=false hotkey-overlay-title="Open a File manager: ${var.program.fileManager.name}" {spawn "${var.program.fileManager.open}"; }
     ${mainMod}+${shiftMod}+F repeat=false hotkey-overlay-title="Open a Brouser: ${var.program.browser.name}" { spawn "${var.program.browser.open}"; }
 
@@ -253,9 +254,15 @@ in {
     open-floating true
   }
 
+
   window-rule {
     match app-id="wezterm"
     exclude is-active=true
+    open-maximized false
+  }
+
+  window-rule {
+    match app-id=".blueman-manager-wrapped"
     open-maximized false
   }
 

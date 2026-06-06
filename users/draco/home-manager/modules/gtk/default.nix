@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   gtk = {
     enable = true;
+    gtk4.theme = null;
     iconTheme = {
       package = pkgs.catppuccin-papirus-folders.override {
         flavor = "mocha";
