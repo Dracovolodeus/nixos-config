@@ -20,15 +20,15 @@ in {
         packageOverrides = pkgs: {
           steam = pkgs.steam.override {
             extraPkgs = pkgs: with pkgs; [
-              krb5.out
-              xorg.libXau.out
-              xorg.libXcomposite.out
-              xorg.libXdamage.out
-              xorg.libXdmcp.out
-              xorg.libXfixes.out
-              xorg.libXrandr.out
-              xorg.libXrender.out
-              xorg.libXtst.out
+              krb5
+              libXau
+              libXcomposite
+              libXdamage
+              libXdmcp
+              libXfixes
+              libXrandr
+              libXrender
+              libXtst
               nss
             ];
           };
