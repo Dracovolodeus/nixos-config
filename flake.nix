@@ -1,73 +1,112 @@
 {
-  description = "Dracovolodeus flake setup";
+  description = "Dracovolodeus flake setup.";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    nixpkgs = {
+      type = "github";
+      owner = "nixos";
+      repo = "nixpkgs";
+      ref = "nixos-26.05";
+    };
+
+    nixpkgs-unstable = {
+      type = "github";
+      owner = "nixos";
+      repo = "nixpkgs";
+      ref = "nixos-26.05";
+    };
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-26.05";
+      flake = true;
+      type = "github";
+      owner = "nix-community";
+      repo = "home-manager";
+      ref = "release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    haumea = {
+      flake = true;
+      type = "github";
+      owner = "nix-community";
+      repo = "haumea";
     };
 
     freesmlauncher = {
-      url = "github:FreesmTeam/FreesmLauncher/update_flake_lock_action";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    mangowc = {
-      url = "github:DreamMaoMao/mango";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    noctalia = {
-      url = "github:noctalia-dev/noctalia/legacy-v4";
-      inputs.nixpkgs.follows = "nixpkgs";
+      flake = true;
+      type = "github";
+      owner = "freesmteam";
+      repo = "freesmlauncher";
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... } @ inputs:
+  outputs =
+    {
+      nixpkgs,
+      home-manager,
+      haumea,
+      ...
+    }@inputs:
     let
-      users = [
-        {userName = "draco"; homeStateVersion = "25.11"; system = "x86_64-linux"; }
-        {userName = "luxle"; homeStateVersion = "25.11"; system = "x86_64-linux"; }
-      ];
       hosts = [
-        { hostName = "tuf"; stateVersion = "25.11"; system = "x86_64-linux"; }
+        {
+          # Asus Tuf A15
+          hostName = "tuf";
+          stateVersion = "25.11";
+          system = "x86_64-linux";
+        }
       ];
+
+      users = [
+        {
+          userName = "draco";
+          homeStateVersion = "25.11";
+          system = "x86_64-linux";
+        }
+      ];
+
+      modules = haumea.lib.load {
+        src = ./features/modules;
+        loader = haumea.lib.loaders.path;
+      };
+      hostsModules = modules.hosts;
+      hmModules = modules.home-manager;
+
     in
-      {
-      nixosConfigurations = builtins.listToAttrs (map
-        (host: {
+    {
+      nixosConfigurations = builtins.listToAttrs (
+        map (host: {
           name = host.hostName;
           value = nixpkgs.lib.nixosSystem {
             system = host.system;
-            modules = [
-              ./hosts/${host.hostName}/configuration.nix
-              ./modules/hosts
-            ];
-            specialArgs = { inherit inputs; stateVersion = host.stateVersion; hostName = host.hostName; };
+            modules = [ ./features/hosts/${host.hostName}/configuration.nix ];
+            specialArgs = {
+              inherit inputs hostsModules;
+              stateVersion = host.stateVersion;
+              hostName = host.hostName;
+            };
           };
-        })
-        hosts);
+        }) hosts
+      );
 
-      homeConfigurations = builtins.listToAttrs (map
-        (user: {
+      homeConfigurations = builtins.listToAttrs (
+        map (user: {
           name = user.userName;
           value = home-manager.lib.homeManagerConfiguration {
             pkgs = nixpkgs.legacyPackages.${user.system};
             modules = [
-              ./users/${user.userName}/home-manager/home.nix
-              inputs.mangowc.hmModules.mango
+              ./features/users/${user.userName}/home-manager/home.nix
+              ./features/modules/home-manager/themes
             ];
             extraSpecialArgs = {
-              inherit inputs;
-              homeStateVersion = user.homeStateVersion;
+              inherit inputs hmModules;
               user = user.userName;
-              unstable = inputs.nixpkgs-unstable.legacyPackages.${user.system};
+              homeStateVersion = user.homeStateVersion;
             };
           };
-        })
-        users);
+        }) users
+      );
+
     };
 }

@@ -1,0 +1,72 @@
+{ pkgs, ... }: {
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    libpciaccess
+    glibc
+    libgcc.lib
+    krb5
+    wayland
+    brotli
+    dbus.lib
+    glib
+    zlib
+    libpulseaudio
+    bzip2
+    xz
+    gcc.cc.lib
+    openssl
+    libssh2
+    libffi
+    gmp
+    libGL
+    freetype
+    zstd
+    mpfr
+    libmpc
+    postgresql
+    mariadb-connector-c
+    sqlite
+    libyaml
+    expat
+    libxcrypt
+    stdenv.cc.cc.lib
+    nspr
+    nss
+    cups
+    atk
+    libxdamage
+    libxext
+    libxau
+    libxdmcp
+    libxtst
+    libxcomposite
+    libxrandr
+    libgbm
+    libxcb
+    libxkbcommon
+    libxfixes
+    libx11
+    cairo
+    pango
+    harfbuzz
+
+    at-spi2-atk
+    alsa-lib
+    SDL2
+    SDL2_mixer
+    SDL2_image
+    SDL2_ttf
+    gtk3
+    libxrender
+    libxcursor
+    libxi
+    gdk-pixbuf
+    libsecret
+    libepoxy
+    fontconfig
+    libxinerama
+    libxxf86vm
+
+    pkg-config
+  ];
+}

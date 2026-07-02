@@ -1,6 +1,0 @@
-{
-  imports = [
-    ./launcher.nix
-    ./powermenu
-  ];
-}
