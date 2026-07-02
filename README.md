@@ -57,7 +57,7 @@ cd /nixos-config
 
 3. **Copy your hardware-configuration.nix file there:**
 ```bash
-cp /etc/nixos/hardware-configuration.nix /nixos-config/f
+cp /etc/nixos/hardware-configuration.nix /nixos-config/
 ```
 
 4. **Copy one of the hosts configuration to set up your own:**
