@@ -48,7 +48,14 @@
         },
         {
           "type": "shell",
-          "key": "│ └",
+          "key": "│ ├",
+          "keyColor": "yellow"
+        },
+        {
+          "type": "disk",
+          "key": "│ └󰅐",
+          "folders": "/",
+          "format": "{days} days",
           "keyColor": "yellow"
         },
 
