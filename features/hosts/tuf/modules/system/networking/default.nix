@@ -8,7 +8,6 @@
       wifi = {
         powersave = true;
         macAddress = "random";
-        backend = "iwd";
       };
     };
 
