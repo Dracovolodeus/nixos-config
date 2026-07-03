@@ -1,6 +1,7 @@
 { pkgs, ... }: {
-  home.packages = with pkgs; [ fastfetch ];
-  home.file.".config/fastfetch/config.jsonc".text = /* json */ ''
+  home = {
+    packages = with pkgs; [ fastfetch ];
+    file.".config/fastfetch/config.jsonc".text = /* json */ ''
     {
       "logo": {
         "padding": {
@@ -132,5 +133,6 @@
         },
       ]
     }
-  '';
+    '';
+  };
 }

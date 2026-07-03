@@ -20,12 +20,14 @@
   imports = [
     # --- CLI --- #
     hmModules.programs.cli.archivers.zip.default
-    hmModules.programs.cli.fastfetch.default
+    hmModules.programs.cli.fastfetch.with_aliases
     hmModules.programs.cli.ffmpeg.default
     hmModules.programs.cli.fish.default
-    hmModules.programs.cli.git.default
+    hmModules.programs.cli.git.with_aliases
+    hmModules.programs.cli.docker.with_aliases
     hmModules.programs.cli.openssl.default
-    hmModules.programs.cli.tree.default
+    hmModules.programs.cli.vfs-tools.tree.default
+    hmModules.programs.cli.vfs-tools.lsd.with_aliases
     hmModules.programs.cli.virtualisation.qemu.default
 
     # --- CLI Development --- #
@@ -37,7 +39,7 @@
     hmModules.programs.cli.dev.python.default
 
     # --- TUI --- #
-    hmModules.programs.tui.editors.neovim.default
+    hmModules.programs.tui.editors.neovim.with_aliases
 
     # --- GUI --- #
     hmModules.programs.gui.anki.default
