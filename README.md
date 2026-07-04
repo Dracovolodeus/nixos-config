@@ -16,7 +16,6 @@
 
  - OS: [**`NixOS`**](https://nixos.org/)
  - WM: [**`Niri`**](https://github.com/YaLTeR/niri)
- - Bar: [**`Waybar`**](https://github.com/Alexays/Waybar)
  - Desktop Shell: [**`Noctalia Shell`**](https://noctalia.dev/)
  - Terminal: [**`Kitty`**](https://github.com/kovidgoyal/kitty)
  - Shell: [**`Fish`**](https://github.com/fish-shell/fish-shell)
