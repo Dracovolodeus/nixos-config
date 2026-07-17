@@ -1,7 +1,5 @@
 {
   user,
-  pkgs,
-  config,
   hmModules,
   homeStateVersion,
   ...
@@ -29,6 +27,7 @@
     hmModules.programs.cli.vfs-tools.tree.default
     hmModules.programs.cli.vfs-tools.lsd.with_aliases
     hmModules.programs.cli.virtualisation.qemu.default
+    hmModules.programs.cli.appimage-run.default
 
     # --- CLI Development --- #
     # hmModules.programs.cli.dev."c++".default
