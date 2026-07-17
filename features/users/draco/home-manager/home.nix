@@ -61,7 +61,7 @@
 
     # --- Games --- #
     hmModules.programs.gui.games.heroic.default
-    # hmModules.programs.gui.games.freesmlauncher.default
+    hmModules.programs.gui.games.freesmlauncher.default
 
     # --- Multimedia --- #
     hmModules.programs.gui.media.imv.default
