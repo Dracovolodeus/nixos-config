@@ -22,12 +22,14 @@
     hmModules.programs.cli.ffmpeg.default
     hmModules.programs.cli.fish.default
     hmModules.programs.cli.git.with_aliases
-    hmModules.programs.cli.docker.with_aliases
     hmModules.programs.cli.openssl.default
+    hmModules.programs.cli.appimage-run.default
     hmModules.programs.cli.vfs-tools.tree.default
     hmModules.programs.cli.vfs-tools.lsd.with_aliases
     hmModules.programs.cli.virtualisation.qemu.default
-    hmModules.programs.cli.appimage-run.default
+    hmModules.programs.cli.virtualisation.docker.with_aliases
+    hmModules.programs.cli.network.sing-box.default
+    hmModules.programs.cli.network.socat.default
 
     # --- CLI Development --- #
     hmModules.programs.cli.dev."c++".default
