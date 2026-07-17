@@ -30,10 +30,10 @@
     hmModules.programs.cli.appimage-run.default
 
     # --- CLI Development --- #
-    # hmModules.programs.cli.dev."c++".default
+    hmModules.programs.cli.dev."c++".default
+    hmModules.programs.cli.dev.rust.default
     # hmModules.programs.cli.dev.go.default
     # hmModules.programs.cli.dev.java.default
-    # hmModules.programs.cli.dev.rust.default
     hmModules.programs.cli.dev.js.default
     hmModules.programs.cli.dev.python.default
 
