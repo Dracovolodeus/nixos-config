@@ -11,6 +11,9 @@ in {
     drmf = "${dockerExe} rm -f";
     dp = "${dockerExe} ps";
     dpa = "${dockerExe} ps -a";
+    dc = "${dockerExe} compose";
+    dcu ="${dockerExe} compose up"; 
+    dcub ="${dockerExe} compose up --build"; 
   };
 
 }
