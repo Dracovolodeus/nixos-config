@@ -1,0 +1,11 @@
+--- a/parentcheck/parentcheck.go
++++ b/parentcheck/parentcheck.go
+@@ -34,7 +34,7 @@ func CheckParentProcess() {
+ 		return
+ 	}
+ 
+-	if parentDir != selfDir || parentBase != "Throne" {
++	if parentBase != "Throne" {
+ 		log.Fatalf("parent check failed: unexpected parent %q, selfPath is %q", parentPath, selfPath)
+ 	}
+ }

@@ -10,13 +10,6 @@
       ref = "nixos-26.05";
     };
 
-    nixpkgs-unstable = {
-      type = "github";
-      owner = "nixos";
-      repo = "nixpkgs";
-      ref = "nixos-26.05";
-    };
-
     home-manager = {
       flake = true;
       type = "github";
@@ -73,6 +66,20 @@
       hostsModules = modules.hosts;
       hmModules = modules.home-manager;
 
+      flakePackagesOverlay = final: prev:
+        assert !(prev ? flake);
+        {
+          flake = haumea.lib.load {
+            src = ./features/packages;
+            loader = haumea.lib.loaders.callPackage;
+            inputs =
+              builtins.removeAttrs final [ "self" "super" "root" ]
+              // { inherit inputs; };
+          };
+        };
+
+      mkHomePkgs = system: nixpkgs.legacyPackages.${system}.extend flakePackagesOverlay;
+
     in
     {
       nixosConfigurations = builtins.listToAttrs (
@@ -80,7 +87,10 @@
           name = host.hostName;
           value = nixpkgs.lib.nixosSystem {
             system = host.system;
-            modules = [ ./features/hosts/${host.hostName}/configuration.nix ];
+            modules = [
+              { nixpkgs.overlays = [ flakePackagesOverlay ]; }
+              ./features/hosts/${host.hostName}/configuration.nix
+            ];
             specialArgs = {
               inherit inputs hostsModules;
               stateVersion = host.stateVersion;
@@ -94,7 +104,7 @@
         map (user: {
           name = user.userName;
           value = home-manager.lib.homeManagerConfiguration {
-            pkgs = nixpkgs.legacyPackages.${user.system};
+            pkgs = mkHomePkgs user.system;
             modules = [
               ./features/users/${user.userName}/home-manager/home.nix
               ./features/modules/home-manager/themes

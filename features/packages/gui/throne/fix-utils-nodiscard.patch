@@ -1,0 +1,43 @@
+--- a/src/global/Utils.cpp
++++ b/src/global/Utils.cpp
+@@ -352,9 +352,9 @@ void runOnUiThread(const std::function<void()> &callback, bool wait) {
+ 
+         if (wait)
+         {
+-            QMetaObject::invokeMethod(&loop, "quit", Qt::QueuedConnection);
++            (void) QMetaObject::invokeMethod(&loop, "quit", Qt::QueuedConnection);
+         }
+     });
+-    QMetaObject::invokeMethod(timer, "start", Qt::QueuedConnection, Q_ARG(int, 0));
++    (void) QMetaObject::invokeMethod(timer, "start", Qt::QueuedConnection, Q_ARG(int, 0));
+ 
+     if (wait && QThread::currentThread() != thread) {
+@@ -400,13 +400,13 @@ void runOnNewThread(const std::function<void()> &callback, bool wait) {
+     QObject::connect(timer, &QTimer::timeout, [=, &loop]() {
+         callback();
+         timer->deleteLater();
+-        QMetaObject::invokeMethod(thread, "quit", Qt::QueuedConnection);
++        (void) QMetaObject::invokeMethod(thread, "quit", Qt::QueuedConnection);
+ 
+         if (wait)
+         {
+-            QMetaObject::invokeMethod(&loop, "quit", Qt::QueuedConnection);
++            (void) QMetaObject::invokeMethod(&loop, "quit", Qt::QueuedConnection);
+         }
+     });
+-    QMetaObject::invokeMethod(timer, "start", Qt::QueuedConnection, Q_ARG(int, 0));
++    (void) QMetaObject::invokeMethod(timer, "start", Qt::QueuedConnection, Q_ARG(int, 0));
+ 
+     if (wait && QThread::currentThread() != thread) {
+@@ -432,9 +432,9 @@ void runOnThread(const std::function<void()> &callback, QObject *parent, bool wa
+ 
+         if (wait)
+         {
+-            QMetaObject::invokeMethod(&loop, "quit", Qt::QueuedConnection);
++            (void) QMetaObject::invokeMethod(&loop, "quit", Qt::QueuedConnection);
+         }
+     });
+-    QMetaObject::invokeMethod(timer, "start", Qt::QueuedConnection, Q_ARG(int, 0));
++    (void) QMetaObject::invokeMethod(timer, "start", Qt::QueuedConnection, Q_ARG(int, 0));
+ 
+     if (wait && QThread::currentThread() != thread) {
