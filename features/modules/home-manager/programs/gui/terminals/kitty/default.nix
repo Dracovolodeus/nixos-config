@@ -81,7 +81,7 @@ in
     };
 
     keybindings = {
-      "ctrl+shift+t" = "launch --type=tab --cwd=current";
+      "ctrl+shift+t" = "launch --type=tab --cwd=last_reported";
       "ctrl+alt+1" = "goto_tab 1";
       "ctrl+alt+2" = "goto_tab 2";
       "ctrl+alt+3" = "goto_tab 3";
