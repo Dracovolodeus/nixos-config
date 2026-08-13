@@ -14,6 +14,7 @@ in {
     dc = "${dockerExe} compose";
     dcu ="${dockerExe} compose up"; 
     dcub ="${dockerExe} compose up --build"; 
+    dcd = "${dockerExe} compose down";
   };
 
 }
