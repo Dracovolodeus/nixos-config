@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  inputs,
   ...
 }:
 let
@@ -14,6 +15,8 @@ let
   playerctlExe = lib.getExe pkgs.playerctl;
   brightnessctlExe = lib.getExe pkgs.brightnessctl;
   xwaylandSatelliteExe = lib.getExe pkgs.xwayland-satellite;
+  niriFloatSticky = inputs.niri-float-sticky.packages.${pkgs.stdenv.hostPlatform.system}.default;
+  niriFloatStickyExe = lib.getExe niriFloatSticky;
 in
 {
   imports = [ ./_configure_protals.nix ];
@@ -22,6 +25,7 @@ in
     niri
     xdg-utils
     wl-clipboard
+    niriFloatSticky
   ];
 
   home.file.".config/niri/config.kdl".text # kdl
@@ -30,6 +34,7 @@ in
         prefer-no-csd
 
         spawn-at-startup "${noctaliaExe}"
+        spawn-at-startup "${niriFloatStickyExe}" "-disable-auto-stick"
         screenshot-path "${config.home.homeDirectory}/Multimedia/images/screenshots/scr-%Y-%m-%dT%H-%M-%S.png"
 
         gestures {
@@ -149,6 +154,7 @@ in
           Mod+Q repeat=false { close-window; }
 
           // Move applications
+          Mod+Ctrl+E repeat=false hotkey-overlay-title="Toggle Sticky Window." { spawn "${niriFloatStickyExe}" "-ipc" "toggle_sticky"; }
           Mod+Shift+E { toggle-window-floating; }
           Mod+E { switch-focus-between-floating-and-tiling; }
 

@@ -32,6 +32,14 @@
       owner = "freesmteam";
       repo = "freesmlauncher";
     };
+
+    niri-float-sticky = {
+      flake = true;
+      type = "github";
+      owner = "probeldev";
+      repo = "niri-float-sticky";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
