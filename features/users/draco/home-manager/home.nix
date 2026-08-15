@@ -29,8 +29,6 @@
     hmModules.programs.cli.virtualisation.qemu.default
     hmModules.programs.cli.virtualisation.docker.with_aliases
     hmModules.programs.cli.network.nsproxy.default
-    hmModules.programs.cli.network.sing-box.default
-    hmModules.programs.cli.network.socat.default
 
     # --- CLI Development --- #
     hmModules.programs.cli.dev."c++".default
