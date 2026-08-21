@@ -61,7 +61,6 @@
     hmModules.programs.gui.messengers.vesktop.with_proxy
 
     # --- Games --- #
-    hmModules.programs.gui.games.heroic.default
     hmModules.programs.gui.games.freesmlauncher.default
 
     # --- Multimedia --- #
