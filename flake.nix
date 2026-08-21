@@ -10,6 +10,13 @@
       ref = "nixos-26.05";
     };
 
+    nixpkgs-unstable = {
+      type = "github";
+      owner = "nixos";
+      repo = "nixpkgs";
+      ref = "nixos-unstable";
+    };
+
     home-manager = {
       flake = true;
       type = "github";

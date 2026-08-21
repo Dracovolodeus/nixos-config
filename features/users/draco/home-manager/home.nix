@@ -62,6 +62,7 @@
 
     # --- Games --- #
     hmModules.programs.gui.games.freesmlauncher.default
+    hmModules.programs.gui.games.lutris.default
 
     # --- Multimedia --- #
     hmModules.programs.gui.media.imv.default
