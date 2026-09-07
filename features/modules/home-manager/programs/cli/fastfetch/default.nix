@@ -1,4 +1,6 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: let
+  noctaliaExe = lib.getExe pkgs.noctalia-shell;
+in {
   home = {
     packages = with pkgs; [ fastfetch ];
     file.".config/fastfetch/config.jsonc".text = /* json */ ''
@@ -71,7 +73,7 @@
           "keyColor": "blue"
         },
         {
-          "type": "wmtheme",
+          "type": "theme",
           "key": "│ ├󰉼",
           "keyColor": "blue"
         },
@@ -82,12 +84,7 @@
         },
         {
           "type": "terminal",
-          "key": "│ ├",
-          "keyColor": "blue"
-        },
-        {
-          "type": "wallpaper",
-          "key": "│ └󰸉",
+          "key": "│ └",
           "keyColor": "blue"
         },
 
@@ -99,7 +96,7 @@
         },
         {
           "type": "display",
-          "key": "│ └󰍹",
+          "key": "│ ├󰍹",
           "keyColor": "green"
         },
         {
@@ -113,11 +110,6 @@
           "keyColor": "green"
         },
         {
-          "type": "disk",
-          "key": "│ ├",
-          "keyColor": "green"
-        },
-        {
           "type": "memory",
           "key": "│ ├󰑭",
           "keyColor": "green"
@@ -128,8 +120,14 @@
           "keyColor": "green"
         },
         {
+          "type": "disk",
+          "key": "│ ├",
+          "keyColor": "green"
+        },
+
+        {
           "type": "uptime",
-          "key": "│ ├󰅐",
+          "key": "│ └󰅐",
           "keyColor": "green"
         },
 
