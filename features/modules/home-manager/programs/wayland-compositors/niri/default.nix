@@ -219,6 +219,7 @@ in
           XF86AudioMicMute allow-when-locked=true repeat=false { spawn "${wpctlExe}" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
 
           XF86AudioPlay allow-when-locked=true repeat=false { spawn "${playerctlExe}" "play-pause"; }
+          XF86AudioPause allow-when-locked=true repeat=false { spawn "${playerctlExe}" "pause"; }
           XF86AudioStop allow-when-locked=true repeat=false { spawn "${playerctlExe}" "stop"; }
           XF86AudioPrev allow-when-locked=true repeat=false { spawn "${playerctlExe}" "previous"; }
           XF86AudioNext allow-when-locked=true repeat=false { spawn "${playerctlExe}" "next"; }
