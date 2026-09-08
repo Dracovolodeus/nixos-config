@@ -15,6 +15,7 @@
   internal.themePath = hmModules.themes.catppuccin.mocha;
 
   nixpkgs.config.allowUnfree = true;
+
   imports = [
     # --- CLI --- #
     hmModules.programs.cli.archivers.zip.default
@@ -24,6 +25,7 @@
     hmModules.programs.cli.git.with_aliases
     hmModules.programs.cli.openssl.default
     hmModules.programs.cli.appimage-run.default
+    hmModules.programs.cli.vfs-tools.gocryptfs.default
     hmModules.programs.cli.vfs-tools.tree.default
     hmModules.programs.cli.vfs-tools.lsd.with_aliases
     hmModules.programs.cli.virtualisation.qemu.default
