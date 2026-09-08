@@ -224,6 +224,8 @@ in
           XF86AudioPrev allow-when-locked=true repeat=false { spawn "${playerctlExe}" "previous"; }
           XF86AudioNext allow-when-locked=true repeat=false { spawn "${playerctlExe}" "next"; }
 
+
+          XF86ScreenSaver repeat=false { power-off-monitors; }
           XF86MonBrightnessUp allow-when-locked=true repeat=false { spawn "${brightnessctlExe}" "--class=backlight" "set" "+5%"; }
           XF86MonBrightnessDown allow-when-locked=true repeat=false { spawn "${brightnessctlExe}" "--class=backlight" "set" "5%-"; }
         }
