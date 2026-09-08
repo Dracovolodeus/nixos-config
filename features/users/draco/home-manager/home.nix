@@ -16,6 +16,8 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  programs.lutrisSandbox.enable = true;
+
   imports = [
     # --- CLI --- #
     hmModules.programs.cli.archivers.zip.default
@@ -65,6 +67,7 @@
     # --- Games --- #
     hmModules.programs.gui.games.freesmlauncher.default
     hmModules.programs.gui.games.lutris.default
+    hmModules.programs.gui.games."lutris-sandbox".default
 
     # --- Multimedia --- #
     hmModules.programs.gui.media.imv.default
@@ -79,3 +82,4 @@
     hmModules.themes.qt.default
   ];
 }
+
