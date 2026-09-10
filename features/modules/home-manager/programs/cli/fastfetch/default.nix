@@ -1,6 +1,5 @@
-{ pkgs, lib, ... }: let
-  noctaliaExe = lib.getExe pkgs.noctalia-shell;
-in {
+{ pkgs, ... }:
+{
   home = {
     packages = with pkgs; [ fastfetch ];
     file.".config/fastfetch/config.jsonc".text = /* json */ ''
