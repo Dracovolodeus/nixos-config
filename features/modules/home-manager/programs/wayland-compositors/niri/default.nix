@@ -7,7 +7,7 @@
 }:
 let
   theme = config.internal.theme;
-  noctaliaExe = lib.getExe pkgs.noctalia-shell;
+  noctaliaExe = lib.getExe pkgs.noctalia;
   kittyExe = lib.getExe pkgs.kitty;
   wpctlExe = lib.getExe' pkgs.wireplumber "wpctl";
   thunarExe = lib.getExe pkgs.thunar;
@@ -145,11 +145,11 @@ in
           Mod+Shift+F repeat=false hotkey-overlay-title="Open Brouser." { spawn "${firefoxExe}"; }
 
           // Noctalia
-          Mod+R repeat=false hotkey-overlay-title="Open Application Launcher." { spawn "${noctaliaExe}" "ipc" "call" "launcher" "toggle"; }
-          Mod+P repeat=false hotkey-overlay-title="Open Session Menu." { spawn "${noctaliaExe}" "ipc" "call" "sessionMenu" "toggle"; }
-          Mod+Alt+B repeat=false hotkey-overlay-title="Toggle Bar." { spawn "${noctaliaExe}" "ipc" "call" "bar" "toggle"; }
-          Mod+Ctrl+W repeat=false hotkey-overlay-title="Toggle Wallpaper." { spawn "${noctaliaExe}" "ipc" "call" "wallpaper" "toggle"; }
-          Mod+Alt+W repeat=false hotkey-overlay-title="Set Random Wallpaper." { spawn "${noctaliaExe}" "ipc" "call" "wallpaper" "random"; }
+          Mod+R repeat=false hotkey-overlay-title="Open Application Launcher." { spawn "${noctaliaExe}" "msg" "panel-toggle" "launcher"; }
+          Mod+P repeat=false hotkey-overlay-title="Open Session Menu." { spawn "${noctaliaExe}" "msg" "panel-toggle" "session"; }
+          Mod+Alt+B repeat=false hotkey-overlay-title="Toggle Bar." { spawn "${noctaliaExe}" "msg" "bar-toggle"; }
+          Mod+Ctrl+W repeat=false hotkey-overlay-title="Toggle Wallpaper." { spawn "${noctaliaExe}" "msg" "panel-toggle" "wallpaper"; }
+          Mod+Alt+W repeat=false hotkey-overlay-title="Set Random Wallpaper." { spawn "${noctaliaExe}" "msg" "wallpaper-random"; }
 
           Mod+Q repeat=false { close-window; }
 
