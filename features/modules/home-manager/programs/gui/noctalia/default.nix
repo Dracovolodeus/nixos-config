@@ -293,37 +293,69 @@ in
     enabled = false
 
     [widget.audio_visualizer]
+    capsule = true
+    color = "primary"
     show_when_idle = true
+
+    [widget.battery]
+    color = "primary"
+
+    [widget.bluetooth]
+    color = "primary"
 
     [widget.bluetooth.actions]
     right = "none"
 
+    [widget.brightness]
+    color = "primary"
+
     [widget.clock]
+    color = "primary"
     format = "{:%H:%M:%S}"
 
     [widget.cpu]
-    stat = "gpu_usage"
+    color = "primary"
+    stat = "cpu_usage"
     visualization = "none"
 
+    [widget.input_volume]
+    color = "primary"
+
+    [widget.keyboard_layout]
+    color = "primary"
+
     [widget.launcher]
+    color = "primary"
     glyph = "rocket"
+
+    [widget.network]
+    color = "primary"
 
     [widget.network.actions]
     right = "none"
 
+    [widget.output_volume]
+    color = "primary"
+
     [widget.ram]
+    color = "primary"
     stat = "ram_pct"
     visualization = "none"
 
     [widget.temp]
+    color = "primary"
     visualization = "none"
 
     [widget.tray]
+    color = "primary"
     drawer = true
     hide_passive = false
 
     [widget.workspaces]
+    empty_color = "outline"
+    focused_color = "secondary"
     labels_only_when_occupied = true
+    occupied_color = "primary"
     scale = 1.4000000000000001
     scroll_repeat = "steps"
 
