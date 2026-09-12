@@ -367,24 +367,24 @@ in
 
   xdg.configFile."noctalia/palettes/CurrentTheme.json".text = builtins.toJSON {
     dark = {
-      mError = colors.base08;
-      mHover = colors.base0E;
-      mOnError = colors.base11;
-      mOnHover = colors.base11;
-      mOnPrimary = colors.base11;
-      mOnSecondary = colors.base11;
-      mOnSurface = colors.base05;
-      mOnSurfaceVariant = colors.base17;
-      mOnTertiary = colors.base11;
-      mOutline = colors.base04;
-      mPrimary = colors.base17;
-      mSecondary = colors.base12;
-      mShadow = colors.base11;
-      mSurface = colors.base00;
-      mSurfaceVariant = colors.base01;
-      mTertiary = colors.base0E;
+      mError = colors.mError;
+      mHover = colors.mHover;
+      mOnError = colors.mOnError;
+      mOnHover = colors.mOnHover;
+      mOnPrimary = colors.mOnPrimary;
+      mOnSecondary = colors.mOnSecondary;
+      mOnSurface = colors.mOnSurface;
+      mOnSurfaceVariant = colors.mOnSurfaceVariant;
+      mOnTertiary = colors.mOnTertiary;
+      mOutline = colors.mOutline;
+      mPrimary = colors.mPrimary;
+      mSecondary = colors.mSecondary;
+      mShadow = colors.mShadow;
+      mSurface = colors.mSurface;
+      mSurfaceVariant = colors.mSurfaceVariant;
+      mTertiary = colors.mTertiary;
       terminal = {
-        background = colors.base00;
+        background = colors.mSurface;
         bright = {
           black = colors.base03;
           blue = colors.base0D;
@@ -395,9 +395,9 @@ in
           white = colors.base07;
           yellow = colors.base0A;
         };
-        cursor = colors.base05;
-        cursorText = colors.base00;
-        foreground = colors.base05;
+        cursor = colors.mOnSurface;
+        cursorText = colors.mSurface;
+        foreground = colors.mOnSurface;
         normal = {
           black = colors.base00;
           blue = colors.base0D;
@@ -409,28 +409,28 @@ in
           yellow = colors.base0A;
         };
         selectionBg = colors.base03;
-        selectionFg = colors.base05;
+        selectionFg = colors.mOnSurface;
       };
     };
     light = {
-      mError = colors.base08;
-      mHover = colors.base08;
-      mOnError = colors.base06;
-      mOnHover = colors.base05;
-      mOnPrimary = colors.base05;
-      mOnSecondary = colors.base05;
-      mOnSurface = colors.base00;
-      mOnSurfaceVariant = colors.base02;
-      mOnTertiary = colors.base05;
-      mOutline = colors.base06;
-      mPrimary = colors.base0D;
-      mSecondary = colors.base12;
-      mShadow = colors.base06;
-      mSurface = colors.base05;
-      mSurfaceVariant = colors.base07;
-      mTertiary = colors.base0E;
+      mError = colors.mError;
+      mHover = colors.mHover;
+      mOnError = colors.mOnError;
+      mOnHover = colors.mOnHover;
+      mOnPrimary = colors.mOnPrimary;
+      mOnSecondary = colors.mOnSecondary;
+      mOnSurface = colors.mOnSurface;
+      mOnSurfaceVariant = colors.mOnSurfaceVariant;
+      mOnTertiary = colors.mOnTertiary;
+      mOutline = colors.mOutline;
+      mPrimary = colors.mPrimary;
+      mSecondary = colors.mSecondary;
+      mShadow = colors.mShadow;
+      mSurface = colors.mSurface;
+      mSurfaceVariant = colors.mSurfaceVariant;
+      mTertiary = colors.mTertiary;
       terminal = {
-        background = colors.base05;
+        background = colors.mSurface;
         bright = {
           black = colors.base03;
           blue = colors.base0D;
@@ -441,9 +441,9 @@ in
           white = colors.base07;
           yellow = colors.base0A;
         };
-        cursor = colors.base00;
-        cursorText = colors.base05;
-        foreground = colors.base00;
+        cursor = colors.mOnSurface;
+        cursorText = colors.mSurface;
+        foreground = colors.mOnSurface;
         normal = {
           black = colors.base00;
           blue = colors.base0D;
@@ -454,8 +454,8 @@ in
           white = colors.base05;
           yellow = colors.base0A;
         };
-        selectionBg = colors.base02;
-        selectionFg = colors.base05;
+        selectionBg = colors.base03;
+        selectionFg = colors.mOnSurface;
       };
     };
   };
