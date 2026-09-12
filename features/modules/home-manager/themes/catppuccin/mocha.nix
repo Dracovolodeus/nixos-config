@@ -24,6 +24,24 @@
     base15 = "#89dceb"; # Sky
     base16 = "#74c7ec"; # Sapphire
     base17 = "#b4befe"; # Lavender
+
+    mPrimary = "#b4befe";
+    mSecondary = "#cba6f7";
+    mTertiary = "#f5c2e7";
+    mError = "#f38ba8";
+    mHover = "#cba6f7";
+    mSurface = "#1e1e2e";
+    mSurfaceVariant = "#313244";
+    mOutline = "#6c7086";
+    mShadow = "#11111b";
+
+    mOnPrimary = "#11111b";
+    mOnSecondary = "#11111b";
+    mOnTertiary = "#11111b";
+    mOnError = "#11111b";
+    mOnHover = "#11111b";
+    mOnSurface = "#cdd6f4";
+    mOnSurfaceVariant = "#b4befe";
   };
 
   gtk = {
