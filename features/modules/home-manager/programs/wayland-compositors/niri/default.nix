@@ -83,8 +83,8 @@ in
           border {
             on
             width 1
-            active-gradient from="${theme.colors.base17}" to="${theme.colors.base0E}" angle=45
-            inactive-color "${theme.colors.base02}"
+            active-gradient from="${theme.colors.mPrimary}" to="${theme.colors.mSecondary}" angle=45
+            inactive-color "${theme.colors.mSurfaceVariant}"
           }
 
           struts {
