@@ -27,8 +27,8 @@ in
 
       enableSplashScreen = true;
       splashTheming = true;
-      splashColor = colors.base17;
-      splashBackground = colors.base00;
+      splashColor = colors.mPrimary;
+      splashBackground = colors.mSurface;
       splashPixelated = false;
 
       spellCheckLanguages = [
@@ -89,3 +89,4 @@ in
     };
   };
 }
+
