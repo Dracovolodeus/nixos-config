@@ -45,20 +45,20 @@ in
       # cursor_trail = 25;
       # cursor_trail_decay = "0.1 0.25";
 
-      foreground = colors.base05;
-      background = colors.base00;
+      background = colors.mSurface;
+      foreground = colors.mOnSurface;
       cursor = colors.base13;
-      cursor_text_color = colors.base00;
+      cursor_text_color = colors.mSurface;
       selection_background = colors.base13;
-      selection_foreground = colors.base00;
-      active_tab_foreground = colors.base0E;
-      active_tab_background = colors.base01;
-      inactive_tab_foreground = colors.base05;
+      selection_foreground = colors.mSurface;
+      active_tab_foreground = colors.mTertiary;
+      active_tab_background = colors.mSurfaceVariant;
+      inactive_tab_foreground = colors.mOnSurface;
       inactive_tab_background = colors.base02;
-      tab_bar_margin_color = colors.base00;
-      active_border_color = colors.base0E;
+      tab_bar_margin_color = colors.mSurface;
+      active_border_color = colors.mTertiary;
       inactive_border_color = colors.base02;
-      bell_border_color = colors.base08;
+      bell_border_color = colors.mError;
 
       color0 = colors.base02;
       color1 = colors.base08;
